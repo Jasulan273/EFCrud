@@ -1,98 +1,68 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OrderServiceApp.Data;
+using OrderServiceApp.Controllers.Interfaces;
 using OrderServiceApp.Models;
 
 [Route("api/[controller]")]
 [ApiController]
 public class OrdersController : ControllerBase
 {
-    private readonly OrderContext _context;
+    private readonly IOrderService _orderService;
 
-    public OrdersController(OrderContext context)
+    public OrdersController(IOrderService orderService)
     {
-        _context = context;
+        _orderService = orderService;
     }
-
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
     {
-        return await _context.Orders.ToListAsync();
+        var orders = await _orderService.GetOrdersAsync();
+        return Ok(orders);
     }
 
-
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Order>> GetOrder(int id)
     {
-        var order = await _context.Orders.FindAsync(id);
-
+        var order = await _orderService.GetOrderByIdAsync(id);
         if (order == null)
         {
             return NotFound();
         }
 
-        return order;
+        return Ok(order);
     }
-
 
     [HttpPost]
     public async Task<ActionResult<Order>> PostOrder(Order order)
     {
-        _context.Orders.Add(order);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+        var createdOrder = await _orderService.CreateOrderAsync(order);
+        return CreatedAtAction(nameof(GetOrder), new { id = createdOrder.Id }, createdOrder);
     }
-
 
     [HttpPut("{id}")]
     public async Task<IActionResult> PutOrder(int id, Order order)
     {
-        if (id != order.Id)
+        try
+        {
+            await _orderService.UpdateOrderAsync(id, order);
+        }
+        catch (ArgumentException)
         {
             return BadRequest();
         }
-
-        _context.Entry(order).State = EntityState.Modified;
-
-        try
-        {
-            await _context.SaveChangesAsync();
-        }
         catch (DbUpdateConcurrencyException)
-        {
-            if (!OrderExists(id))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
-        }
-
-        return NoContent();
-    }
-
-
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteOrder(int id)
-    {
-        var order = await _context.Orders.FindAsync(id);
-        if (order == null)
         {
             return NotFound();
         }
 
-        _context.Orders.Remove(order);
-        await _context.SaveChangesAsync();
-
         return NoContent();
     }
 
-    private bool OrderExists(int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteOrder(int id)
     {
-        return _context.Orders.Any(e => e.Id == id);
+        await _orderService.DeleteOrderAsync(id);
+        return NoContent();
     }
 }
