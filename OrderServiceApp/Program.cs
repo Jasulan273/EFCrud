@@ -1,22 +1,24 @@
-using Microsoft.EntityFrameworkCore;
-using OrderServiceApp.Controllers.Interfaces;
-using OrderServiceApp.Data;
-using OrderServiceApp.Services;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<OrderContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddControllers();
+builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+builder.Services.AddOcelot();
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.MapControllers();
 
 
+await app.UseOcelot();
 
 app.Run();
