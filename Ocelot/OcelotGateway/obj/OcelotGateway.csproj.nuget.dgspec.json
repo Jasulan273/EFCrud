@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files\\PET-Projects\\HardCode\\Ocelot\\OcelotGateway\\OcelotGateway.csproj": {}
+    "C:\\Program Files\\PET-Projects\\HardCode\\CRUD\\Ocelot\\OcelotGateway\\OcelotGateway.csproj": {}
   },
   "projects": {
-    "C:\\Program Files\\PET-Projects\\HardCode\\Ocelot\\OcelotGateway\\OcelotGateway.csproj": {
+    "C:\\Program Files\\PET-Projects\\HardCode\\CRUD\\Ocelot\\OcelotGateway\\OcelotGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Program Files\\PET-Projects\\HardCode\\Ocelot\\OcelotGateway\\OcelotGateway.csproj",
+        "projectUniqueName": "C:\\Program Files\\PET-Projects\\HardCode\\CRUD\\Ocelot\\OcelotGateway\\OcelotGateway.csproj",
         "projectName": "OcelotGateway",
-        "projectPath": "C:\\Program Files\\PET-Projects\\HardCode\\Ocelot\\OcelotGateway\\OcelotGateway.csproj",
+        "projectPath": "C:\\Program Files\\PET-Projects\\HardCode\\CRUD\\Ocelot\\OcelotGateway\\OcelotGateway.csproj",
         "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-        "outputPath": "C:\\Program Files\\PET-Projects\\HardCode\\Ocelot\\OcelotGateway\\obj\\",
+        "outputPath": "C:\\Program Files\\PET-Projects\\HardCode\\CRUD\\Ocelot\\OcelotGateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config",

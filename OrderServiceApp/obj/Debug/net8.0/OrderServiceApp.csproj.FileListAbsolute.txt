@@ -104,4 +104,9 @@ C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\Ord
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\OrderServiceApp.genruntimeconfig.cache
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\ref\OrderServiceApp.dll
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\OrderServiceApp.sourcelink.json
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\ocelot.json
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\MassTransit.dll
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\MassTransit.AspNetCoreIntegration.dll
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\RabbitMQ.Client.dll

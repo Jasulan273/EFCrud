@@ -1,17 +1,41 @@
-using Microsoft.EntityFrameworkCore;
+using MassTransit;
 using OrderServiceApp.Data;
 using OrderServiceApp.Models;
 using OrderServiceApp.Controllers.Interfaces;
-
+using Microsoft.EntityFrameworkCore;
 namespace OrderServiceApp.Services
 {
     public class OrderService : IOrderService
     {
         private readonly OrderContext _context;
+        private readonly IBus _bus;
 
-        public OrderService(OrderContext context)
+        public OrderService(OrderContext context, IBus bus)
         {
             _context = context;
+            _bus = bus;
+        }
+
+        public async Task<Order> CreateOrderAsync(Order order)
+        {
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            var orderCreatedEvent = new OrderCreatedEvent
+            {
+                OrderId = order.Id,
+                Name = order.Name,
+                Description = order.Description
+            };
+
+            await _bus.Publish(orderCreatedEvent);
+
+            return order;
+        }
+
+        public async Task<Order?> GetOrderByIdAsync(int id)
+        {
+            return await _context.Orders.FindAsync(id);
         }
 
         public async Task<IEnumerable<Order>> GetOrdersAsync()
@@ -19,27 +43,17 @@ namespace OrderServiceApp.Services
             return await _context.Orders.ToListAsync();
         }
 
-     public async Task<Order?> GetOrderByIdAsync(int id)
-        {
-            return await _context.Orders.FindAsync(id);
-        }
-
-
-        public async Task<Order> CreateOrderAsync(Order order)
-        {
-            _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
-            return order;
-        }
-
         public async Task UpdateOrderAsync(int id, Order order)
         {
-            if (id != order.Id)
+            var existingOrder = await _context.Orders.FindAsync(id);
+            if (existingOrder == null)
             {
-                throw new ArgumentException("Order ID mismatch");
+                throw new ArgumentException("Order not found");
             }
 
-            _context.Entry(order).State = EntityState.Modified;
+            existingOrder.Name = order.Name;
+            existingOrder.Description = order.Description;
+
             await _context.SaveChangesAsync();
         }
 
