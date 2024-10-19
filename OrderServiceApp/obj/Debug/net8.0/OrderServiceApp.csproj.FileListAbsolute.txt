@@ -105,13 +105,3 @@ C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\Ord
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\ref\OrderServiceApp.dll
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\obj\Debug\net8.0\OrderServiceApp.sourcelink.json
 C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\ocelot.json
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\FluentValidation.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\IPAddressRange.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
-C:\Program Files\PET-Projects\HardCode\CRUD\OrderServiceApp\bin\Debug\net8.0\Ocelot.dll

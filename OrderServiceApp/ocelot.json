@@ -1,12 +1,12 @@
 {
     "Routes": [
       {
-        "DownstreamPathTemplate": "/orders",
-        "DownstreamScheme": "https",
+        "DownstreamPathTemplate": "/api/orders",
+        "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 7219
+            "Port": 5144
           }
         ],
         "UpstreamPathTemplate": "/orders",
@@ -14,7 +14,7 @@
       }
     ],
     "GlobalConfiguration": {
-      "BaseUrl": "https://localhost:5000"
+      "BaseUrl": "http://localhost:5046"
     }
   }
   
