@@ -29,10 +29,9 @@ namespace OrderServiceApp.Services
             };
 
             await _bus.Publish(orderCreatedEvent);
-
             return order;
         }
-
+   
         public async Task<Order?> GetOrderByIdAsync(int id)
         {
             return await _context.Orders.FindAsync(id);

@@ -1,0 +1,7 @@
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.csproj.AssemblyReference.cache
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.AssemblyInfoInputs.cache
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.AssemblyInfo.cs
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.csproj.CoreCompileInputs.cache
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.MvcApplicationPartsAssemblyInfo.cache
+C:\Program Files\PET-Projects\HardCode\CRUD\DeliveryService\obj\Debug\net6.0\DeliveryService.sourcelink.json
